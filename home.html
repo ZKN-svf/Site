@@ -1,55 +1,71 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ZKN Site - Social</title>
+  <meta charset="UTF-8">
+  <title>ZKN Site - Bem-vindo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Poppins', sans-serif;
-      background: #0f2027;
-      color: white;
       margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #1f1f1f, #3a3a3a);
+      font-family: 'Poppins', sans-serif;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100vh;
-      gap: 15px;
+      min-height: 100vh;
+      color: white;
     }
+
     h1 {
-      margin-bottom: 20px;
+      font-size: 3em;
+      margin-bottom: 40px;
     }
+
+    .button-container {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
     .btn {
       padding: 15px 30px;
-      font-size: 16px;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      width: 200px;
-      text-align: center;
-      transition: transform 0.2s ease;
+      background-color: #2d2d2d;
+      border: 2px solid white;
+      color: white;
+      border-radius: 12px;
+      text-decoration: none;
+      font-size: 1.1em;
+      transition: 0.3s ease;
     }
+
     .btn:hover {
+      background-color: white;
+      color: #2d2d2d;
       transform: scale(1.05);
     }
-    .insta { background-color: #e1306c; }
-    .discord { background-color: #5865F2; }
-    .tiktok { background-color: #000000; color: white; }
-    .spotify { background-color: #1DB954; }
 
-    a {
-      text-decoration: none;
-      color: white;
-      font-weight: bold;
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2em;
+      }
+
+      .btn {
+        padding: 12px 20px;
+        font-size: 1em;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>Bem-vindo ao ZKN Site!</h1>
-  <button class="btn insta"><a href="https://instagram.com" target="_blank">Instagram</a></button>
-  <button class="btn discord"><a href="https://discord.com" target="_blank">Discord</a></button>
-  <button class="btn tiktok"><a href="https://tiktok.com" target="_blank">TikTok</a></button>
-  <button class="btn spotify"><a href="https://spotify.com" target="_blank">Spotify</a></button>
+  <h1>Bem-vindo ao ZKN Site</h1>
+  <div class="button-container">
+    <a class="btn" href="https://www.instagram.com/ander_sonkkkj/" target="_blank">Instagram</a>
+    <a class="btn" href="https://open.spotify.com/playlist/3hTs12zoz4Lrq0R0QWEPc8?si=ae7500b3c8f84143" target="_blank">Spotify</a>
+    <a class="btn" href="https://www.tiktok.com/@anderzkn?lang=en" target="_blank">TikTok</a>
+    <a class="btn" href="https://discord.gg/nMWru5fj" target="_blank">Discord</a>
+  </div>
 </body>
 </html>
